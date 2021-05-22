@@ -1,0 +1,37 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: white;
+  width: 500px;
+  margin: 0 auto;
+  border: 3px solid blue;
+  padding: 0 2rem 1rem;
+  box-shadow: 3px 3px 3px #01019e;
+}
+h1 {
+  font-size: 150%;
+  color: blue;
+  margin-bottom: 1rem;
+}
+
+hr {
+  border-top: 1px dashed black;
+}
+
+label {
+  width: 11rem;
+  float: left;
+}
+
+input,
+select {
+  margin-left: 1rem;
+  width: 15rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem;
+}
+
+input[type="button"] {
+  margin-left: 12rem;
+  width: 8rem;
+}

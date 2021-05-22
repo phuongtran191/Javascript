@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Value Application</title>
+
+    <script>
+      var a = parseFloat(prompt("Enter the first money: "));
+      var r = parseFloat(prompt("Enter interest rate:"));
+      var n = parseInt(prompt("Enter num of year:"));
+      var total = 0;
+
+      if (isNaN(a) || a <= 0 || isNaN(r) || r <= 0 || isNaN(n) || n <= 0) {
+        alert("Please enter valid value");
+      } else {
+        total = a;
+        for (var i = 1; i <= n; i++) {
+          total = total + (total * r) / 100;
+        }
+
+        alert("Future money: " + total);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var onChangeHandler = function () {
+        alert("On change handler is being run.");
+      };
+
+      var onSubmitForm = function () {
+        alert("You submmited form.");
+      };
+
+      window.onload = function () {
+        var nameTxt = document.getElementById("name");
+        nameTxt.onchange = onChangeHandler;
+
+        var button = document.getElementById("submitForm");
+        button.onclick = onSubmitForm;
+      };
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>Enter name:</label>
+      <input type="text" id="name" />
+      <br />
+      <input type="button" id="submitForm" value="Submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial number</title>
+    <script>
+      "use strict";
+      var factorial = function (n) {
+        var result = 1;
+        for (var i = n; i > 1; i--) {
+          result *= i;
+        }
+        return result;
+      };
+
+      /*
+      var factorialRecursion = function (n) {
+        if (n <= 1) {
+          return 1;
+        } else {
+          return n * factorialRecursion(n - 1);
+        }
+      };
+      */
+
+      var n = parseInt(prompt("Enter number n: (0<n<=10)", 5));
+      if (isNaN(n) || n <= 0 || n > 10) {
+        alert("Please enter valid number");
+      } else {
+        var calc = factorial;
+        factorial = undefined;
+
+        alert("Result: " + calc(n));
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

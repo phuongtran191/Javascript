@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression</title>
+    <script>
+      /*
+            // 1.
+            // create regular expression object using RegExp constructor function
+            var pattern1 = new RegExp("Baddage");
+            // another way to create regular expression object using regular expression literal
+            var pattern2 = /Baddage/;
+
+            var inventor = "Charles Baddage";
+            var programmer = "Ada Lovelace";
+
+            // test if pattern is matched with string
+            alert(pattern1.test(inventor)); // true
+            alert(pattern1.test(programmer)); // false
+
+            // create a case in-sensitive regular expression
+            var pattern3 = new RegExp("baddage");
+            var pattern31 = new RegExp("baddage", "i");
+            var pattern4 = /baddage/i;
+
+            alert(pattern3.test(inventor)); // false
+            alert(pattern31.test(inventor)); // true
+
+            // 2.
+            var string = "2021 MMA Inc.\nAll rights reserved (5/2015).";
+            alert(/\//.test(string)); // true
+            alert(/\xA9/.test(string)); // true
+
+            var pattern5 = new RegExp("\\\\"); // false because \n is not a \
+            alert(pattern5.test(string));
+
+            var string2 = "The product code is MBT-3461.";
+            alert(/MB./.test(string2)); // true
+            alert(/MB[TF]/.test(string2)); // true
+            alert(/MBT-\W/.test(string2)); // false
+
+            // 3.
+            alert("/^Charles/.test('Charles Baddage'): " + /^Charles/.test("Charles Baddage")); // true
+            alert("/Baddage$/.test('Charles Baddage'): " + /Baddage$/.test("Charles Baddage")); // true
+            alert("/^Baddage/.test('Charles Baddage'): " + /^Baddage/.test("Charles Baddage")); // false
+            alert("/Ad/.test('Ada Lovelace'): " + /Ad/.test("Ada Lovelace")); // true
+            alert("/Ad\b/.test('Ada Lovelace'): " + /Ad\b/.test("Ada Lovelace")); // false
+            alert("/\BAd\B/.test('Ada Lovelace'): " + /Ad\B/.test("Ada Lovelace")); // true
+      
+      // 4.
+      alert("/^(Rob)|(Bod)\n/.test('Rob Robertson'): " + /^(Rob)|(Bod)\n/.test("Rob Robertson")); // true
+      alert('/^(\w\w\w) \1/.test("Rob Robertson"): ' + /^(\w\w\w) \1/.test("Rob Robertson")); // true
+*/
+      // 5.
+      var phone = "559-555-6627";
+      var fax = "(559) 555-6623";
+      alert(/^\d{3}-\d{3}-\d{4}$/.test(phone)); // true
+      alert(/^\(\d{3}\) ?\d{3}-\d{4}$/.test(fax)); // true
+      var phonePattern = /^(\d{3}-)|(\(\d{3}\) ?)\d{3}-\d{4}$/;
+      alert(phonePattern.test(phone)); // true
+      alert(phonePattern.test(fax)); // true
+    </script>
+  </head>
+  <body></body>
+</html>

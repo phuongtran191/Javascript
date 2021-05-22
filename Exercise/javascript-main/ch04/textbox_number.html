@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Textbox and number</title>
+    <script>
+      window.onload = function () {
+        document.getElementById("show_data").onclick = function () {
+          var firstName = document.getElementById("first_name").value;
+          var salesAmount = document.getElementById("sales_amount").value;
+          salesAmount = parseFloat(salesAmount);
+
+          alert("Name: " + firstName + "\nSales amount: " + salesAmount);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="first_name">First Name: </label><input type="text" id="first_name" /><br /><br />
+      <label for="sales_amount">Sales amount: </label><input type="text" id="sales_amount" /><br /><br />
+      <input type="button" id="show_data" value="Sales Data" />
+    </form>
+  </body>
+</html>

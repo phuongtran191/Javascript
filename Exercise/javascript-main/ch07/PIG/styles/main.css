@@ -1,0 +1,43 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: white;
+  width: 600px;
+  margin: 0 auto;
+  border: 3px solid blue;
+  padding: 0 2rem 1rem;
+  box-shadow: 3px 3px 3px #01019e;
+}
+h1 {
+  font-size: 150%;
+  color: blue;
+  margin-bottom: 1rem;
+}
+fieldset {
+  margin-bottom: 2rem;
+}
+legend {
+  color: #01019e;
+}
+
+#score1,
+#score2 {
+  width: 60px;
+}
+
+#turn {
+  display: none;
+}
+#turn.open {
+  display: block;
+}
+#turn p {
+  font-size: 110%;
+  font-weight: bold;
+}
+#turn input {
+  width: 60px;
+}
+#turn label:first-of-type {
+  margin-left: 2rem;
+}

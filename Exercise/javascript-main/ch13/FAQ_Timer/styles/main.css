@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px solid black;
+  box-shadow: 4px 4px 4px silver;
+  padding: 1rem 2rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  color: blue;
+}
+
+fieldset {
+  margin-bottom: 2rem;
+}
+
+legend {
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  text-align: right;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  cursor: pointer;
+  background: url(../images/plus.png) no-repeat left center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+h2.minus {
+  background: url(../images/minus.png) no-repeat left center;
+}
+
+div {
+  display: none;
+}
+div.open {
+  display: block;
+}
+.closed,
+.hidden {
+  display: none;
+}

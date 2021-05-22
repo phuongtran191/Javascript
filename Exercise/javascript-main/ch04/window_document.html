@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window and document object</title>
+  </head>
+  <body>
+    <script>
+      window.confirm("Are you want to delete it?");
+      var entryA = window.prompt("Enter value: ", "12345");
+      entryA = window.parseInt(entryA);
+      alert("Value A: " + entryA);
+      var entryB = window.prompt("Enter value: ", "12345.6789");
+      entryB = window.parseFloat(entryB);
+      alert("Value B: " + entryB);
+    </script>
+    <script>
+      var date = new Date();
+      document.writeln("Today is " + date.toDateString());
+    </script>
+  </body>
+</html>

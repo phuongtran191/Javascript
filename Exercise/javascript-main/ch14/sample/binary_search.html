@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary search</title>
+    <script type="text/javascript" src="binary_search.js"></script>
+    <script>
+      // generate random number between 1 and number
+      var getRandomNumber = function (number) {
+        return Math.floor(Math.random() * number) + 1;
+      };
+
+      // create array
+      var numbers = [];
+      for (var i = 0; i < 256; i++) {
+        numbers[i] = getRandomNumber(1000);
+      }
+      // sort array
+      numbers.sort(function (a, b) {
+        return a - b;
+      });
+
+      // search
+      var index = binarySearch(numbers, 125);
+      console.log(numbers.join(", "));
+      if (index === -1) {
+        console.log("Number is not in array");
+      } else {
+        console.log(numbers[index] + " found at position " + index);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

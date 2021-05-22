@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype of JavaScript</title>
+    <script>
+      var data = [
+        [1001, 560.5, 0.07],
+        [1002, 1425.5, 0, 085],
+        [1003, 325, 0],
+      ];
+      var invoices = [];
+
+      // We want to create invoices array from data array object with many ways
+
+      // 1. create object for each invoice in array
+      // this way each object will create one getTotal method but it the same for all objects
+      // so more wasted memory allocated
+      for (var i = 0; i < data.length; i++) {
+        invoices[i] = {
+          invoiceId: data[i][0],
+          subTotal: data[i][1],
+          taxRate: data[i][2],
+          getTotal: function () {
+            return this.subTotal * (1 + this.taxRate);
+          },
+        };
+      }
+
+      // 2. Using constructor function to create object and add method to prototype object
+      // this can create many instance of invoice obj that refer to prototype methods
+      // => save memory
+      var Invoice = function (id, subTotal, taxRate) {
+        this.invoiceId = id;
+        this.subTotal = subTotal;
+        this.taxRate = taxRate;
+      };
+      Invoice.prototype.getTotal = function () {
+        return this.subTotal * (1 + this.taxRate);
+      };
+      for (var i = 0; i < data.length; i++) {
+        invoices[i] = new Invoice(data[i][0], data[i][1], data[i][2]);
+      }
+
+      // 3. Use Object.create(prototype) method
+      // with this way, we can specify a prototype object for created object
+      // this make the prototypal nature of JS more clear
+      // we create custom prototype object
+      var invoicePrototype = {
+        getTotal: function () {
+          return this.subTotal * (1 + this.taxRate);
+        },
+      };
+      // then use it in Object.create method
+      for (var i = 0; i < data.length; i++) {
+        invoices[i] = Object.create(invoicePrototype);
+        invoices[i].invoiceId = data[i][0];
+        invoices[i].subTotal = data[i][1];
+        invoices[i].taxRate = data[i][2];
+      }
+
+      // 4. Use factory function
+      // reuse Object.create method
+      // this same with constructor function but not using new keyword
+      var getInvoice = function (id, subTotal, taxRate) {
+        invoice = Object.create(invoicePrototype);
+        invoice.invoiceId = id;
+        invoice.subTotal = subTotal;
+        invoice.taxRate = taxRate;
+        return invoice;
+      };
+      for (var i = 0; i < data.length; i++) {
+        invoices[i] = getInvoice(data[i][0], data[i][1], data[i][2]);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

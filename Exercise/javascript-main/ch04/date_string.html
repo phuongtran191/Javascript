@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date and String object</title>
+  </head>
+  <body>
+    <script>
+      var today = new Date();
+      document.write("Today: " + today.toDateString() + "<br>");
+      document.write("Year: " + today.getFullYear() + "<br>");
+      document.write("Date of month: " + today.getDate() + "<br>");
+      document.write("Month: " + today.getMonth() + " (count from 0)");
+    </script>
+    <script>
+      var name = "Harry Potter";
+      document.write("<br><br>Name: " + name + "<br>");
+      document.write("Name upper: " + name.toUpperCase() + "<br>");
+      document.write("Name length: " + name.length + "<br>");
+      document.write('Index of " ": ' + name.indexOf(" ") + "<br>");
+      document.write("First name: " + name.substr(0, name.indexOf(" ")) + "<br>");
+    </script>
+  </body>
+</html>

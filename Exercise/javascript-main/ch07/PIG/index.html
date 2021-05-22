@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIG application</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="js/pig.js"></script>
+  </head>
+  <body>
+    <h1>Let's Play PIG</h1>
+    <fieldset>
+      <legend>Rules</legend>
+      <ul>
+        <li>First player to 100 wins.</li>
+        <li>Players take turns rolling the die.</li>
+        <li>Turn ends when player rolls a 1 or chooses to hold.</li>
+        <li>If player rolls 1, they lose all points earned during the turn.</li>
+        <li>If player holds, points earned during the turn are added to their total.</li>
+        <li>First player to 100 wins</li>
+      </ul>
+    </fieldset>
+    <label for="player_1">Player 1</label>
+    <input type="text" id="player_1" name="player_1" />
+    <label>Score</label>
+    <input type="text" id="score1" disabled /><br /><br />
+
+    <label for="player_2">Player 2</label>
+    <input type="text" id="player_2" name="player_2" />
+    <label>Score</label>
+    <input type="text" id="score2" disabled />
+    <input type="button" id="new_game" name="new_game" value="New Game" />
+    <br />
+
+    <section id="turn">
+      <p><span id="current">&nbsp;</span>'s turn</p>
+      <input type="button" id="roll" value="Roll" />
+      <input type="button" id="hold" value="Hold" />
+      <label>Die</label>
+      <input type="text" id="die" disabled />
+      <label>Total</label>
+      <input type="text" id="total" disabled />
+    </section>
+  </body>
+</html>

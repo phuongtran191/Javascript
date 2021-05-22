@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 600px;
+  margin: 0 auto;
+}
+
+main {
+  border: 3px solid #04049b;
+  padding: 2rem;
+}
+
+h1 {
+  margin-top: 0;
+  color: #04049b;
+}
+
+label {
+  float: left;
+  width: 12rem;
+  text-align: right;
+}
+
+input {
+  width: 10rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem;
+  margin-left: 1rem;
+}
+
+#emailList input[type="button"] {
+  margin-left: 13rem;
+  width: 7rem;
+}
+
+#emailList span {
+  color: red;
+}

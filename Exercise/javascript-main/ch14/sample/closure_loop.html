@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure loop problem and solving</title>
+    <script>
+      window.onload = function () {
+        var topSites = ["Google", "Facebook", "Twitter"];
+        var links = document.getElementById("top_site").getElementsByTagName("a");
+        /* closure problem
+        for (var i in topSites) {
+          links[i].innerHTML = topSites[i];
+          // problem: onclick handler function is closure
+          // so value of i is by reference and can change.
+          // when user click on any link, then onclick handler function is invoked
+          // and value of i will be its last value
+          links[i].onclick = function () {
+            alert("You clicked on " + topSites[i]);
+          };
+        }
+        */
+
+        // solve by calling function return function
+        /*
+        var createHandler = function (name) {
+          return function () {
+            alert("You clicked on " + name);
+          };
+        };
+        for (var i in topSites) {
+          links[i].innerHTML = topSites[i];
+          links[i].onclick = createHandler(topSites[i]);
+        }
+        */
+
+        // solve by using an IIFE
+        for (var i in topSites) {
+          links[i].innerHTML = topSites[i];
+          links[i].onclick = (function (name) {
+            return function () {
+              alert("You clicked on " + name);
+            };
+          })(topSites[i]);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <p id="top_site">
+        <a href="#"></a><br />
+        <a href="#"></a><br />
+        <a href="#"></a><br />
+      </p>
+    </main>
+  </body>
+</html>

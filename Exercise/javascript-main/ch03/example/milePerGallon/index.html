@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mile per Gallon application</title>
+    <script>
+      var miles;
+      var gallons;
+      var again;
+
+      do {
+        miles = window.prompt("Enter miles: ", 100);
+        miles = window.parseInt(miles);
+
+        gallons = window.prompt("Enter gallons: ", 10);
+        gallons = window.parseInt(gallons);
+
+        // validate input value
+        if (isNaN(miles) || miles <= 0 || isNaN(gallons) || gallons <= 0) {
+          alert("Please enter valid data");
+        } else {
+          var result = miles / gallons;
+          window.alert("Result: " + result);
+        }
+        again = prompt("Do you want to repeat?", "y");
+      } while (again == "y");
+    </script>
+  </head>
+  <body></body>
+</html>

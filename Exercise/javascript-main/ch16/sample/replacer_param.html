@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replacer parameter in stringify method</title>
+    <script>
+      var employee = {
+        name: {
+          f: "grade",
+          l: "hopper",
+        },
+        start: new Date("1/1/2020"),
+        salary: 9000,
+      };
+      var regions = ["northwest", "southwest", "central", "east"];
+
+      // replacer is function
+      // capitalize string and don't return salary information
+      var replacer = function (key, value) {
+        if (key === "") {
+          return value;
+        }
+        if (key === "salary") {
+          return undefined;
+        }
+        if (typeof value === "string") {
+          var first = value.substring(0, 1).toUpperCase();
+          var remaining = value.substring(1);
+          return first + remaining;
+        } else {
+          return value;
+        }
+      };
+
+      console.log(JSON.stringify(employee, replacer));
+      console.log(JSON.stringify(regions, replacer));
+
+      // replacer is array
+      console.log(JSON.stringify(employee, ["name", "start"]));
+      console.log(JSON.stringify(employee, ["name", "f", "l", "start"]));
+    </script>
+  </head>
+  <body></body>
+</html>

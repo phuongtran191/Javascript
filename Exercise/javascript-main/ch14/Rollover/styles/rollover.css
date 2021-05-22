@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 80%;
+  max-width: 835px;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px solid #021d68;
+  box-shadow: 4px 4px 4px #021d68;
+  padding: 1rem 2rem;
+}

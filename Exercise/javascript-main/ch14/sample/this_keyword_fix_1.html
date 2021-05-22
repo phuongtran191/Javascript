@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work with this keyword in closure</title>
+    <script>
+      var tax = {
+        rate: 0.075,
+        calc: function (sub) {
+          return (sub * (1 + this.rate)).toFixed(2);
+        },
+        displayFullPrice: function (subtotal) {
+          return function () {
+            alert(this.calc(subtotal));
+          }.bind(this);
+        },
+      };
+
+      window.onload = function () {
+        var calc = tax.displayFullPrice(100);
+        calc(); // ok
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

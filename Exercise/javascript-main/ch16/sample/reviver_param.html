@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviver parameter in parse method</title>
+    <script>
+      var s = '{"name":{"f":"grade","l":"hopper"},"start":"2019-12-31T17:00:00.000Z"}';
+
+      var obj = JSON.parse(s);
+      console.log(obj);
+
+      var reviver = function (key, value) {
+        if (key === "") {
+          return value;
+        }
+        var dt = new Date(value);
+        return dt.toString() === "Invalid Date" ? value : dt;
+      };
+      obj = JSON.parse(s, reviver);
+      console.log(obj);
+
+      // add more property to date object
+      var reviver2 = function (key, value) {
+        if (key === "") {
+          return value;
+        }
+        var dt = new Date(value);
+        if (dt.toString() === "Invalid Date") {
+          return value;
+        } else {
+          var m = dt.getMonth() + 1;
+          dt.short = m + "/" + dt.getDate() + "/" + dt.getFullYear();
+          return dt;
+        }
+      };
+      obj = JSON.parse(s, reviver2);
+      console.log(obj);
+
+      // convert "name" object to string
+      var reviver3 = function (key, value) {
+        if (key === "name") {
+          return value.l + ", " + value.f;
+        } else {
+          return value;
+        }
+      };
+      obj = JSON.parse(s, reviver3);
+      console.log(obj);
+    </script>
+  </head>
+  <body></body>
+</html>

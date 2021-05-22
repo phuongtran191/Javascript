@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager Application</title>
+    <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    <script type="text/javascript" src="js/library_namespace.js"></script>
+    <script type="text/javascript" src="js/library_storage.js"></script>
+    <script type="text/javascript" src="js/library_tasklist.js"></script>
+    <script type="text/javascript" src="js/task.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Task Manager</h1>
+      <div id="tasks"></div>
+      <form id="task_form">
+        <label for="task">Task</label><br />
+        <input type="text" id="task" name="task" /><br />
+        <input type="button" id="add_task" name="add_task" value="Add Task" /><br />
+        <input type="button" id="clear_tasks" name="clear_tasks" value="Clear Tasks" />
+      </form>
+      <div class="clear"></div>
+    </main>
+  </body>
+</html>

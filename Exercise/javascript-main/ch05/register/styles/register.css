@@ -1,0 +1,35 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: white;
+  width: 730px;
+  margin: 0 auto;
+  border: 3px solid blue;
+  padding: 0 2rem 1rem;
+}
+h1 {
+  font-size: 150%;
+  color: blue;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 120%;
+  margin-bottom: 0.25rem;
+}
+label {
+  float: left;
+  width: 9rem;
+}
+input,
+select {
+  width: 20rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+input[type="checkbox"],
+[type="radio"] {
+  width: 1rem;
+}
+#registration_form span {
+  color: red;
+}

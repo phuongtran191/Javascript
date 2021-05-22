@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager Application</title>
+    <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    <script type="text/javascript" src="js/library_task.js"></script>
+    <script type="text/javascript" src="js/task.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Task Manager</h1>
+      <div id="tasks">
+        <label for="task_list">Task List</label><br />
+        <textarea id="task_list" name="task_list" rows="6" readonly></textarea>
+      </div>
+      <form id="task_form">
+        <label for="task">Task</label><br />
+        <input type="text" id="task" name="task" /><br />
+        <label for="task_date">Date:</label>
+        <input type="text" id="task_date" name="task_date" /><br />
+        <input type="button" id="add_task" name="add_task" value="Add Task" /><br />
+        <input type="button" id="clear_tasks" name="clear_tasks" value="Clear Tasks" />
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+main {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 0 2rem 1rem;
+}
+
+h1 {
+  color: blue;
+}
+
+#email_form label {
+  float: left;
+  width: 12rem;
+  text-align: right;
+  margin-top: 0.2rem;
+}
+
+#email_form input {
+  width: 15rem;
+  font-size: 90%;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
+
+#email_form span {
+  color: red;
+  font-size: 70%;
+}
+
+#email_form input[type="button"] {
+  margin-left: 12.5rem;
+  width: 7rem;
+}
+
+/* media for tablet and small */
+@media only screen and (max-width: 768px) {
+  #email_form label {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  #email_form input {
+    display: block;
+    width: 90%;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0.2rem 0.5rem;
+  }
+
+  #email_form span {
+    width: 100%;
+    display: block;
+  }
+
+  #email_form input[type="button"] {
+    margin: 0 auto;
+  }
+}
